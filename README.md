@@ -1,12 +1,11 @@
 # movie_tube
 for rating and reviewing the movies 
  
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app allows signed_in user to rate and review the movies and also added searching feature
 
-Things you may want to cover:
+Gems used in this app:
 
-* Ruby version
+* carrierwave for image uploading
 
 * System dependencies
 
