@@ -1,8 +1,7 @@
 <%= form_for [ @movie, @review ] do |f| %>
    
   <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <div id="star_rating"></div>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
@@ -12,3 +11,10 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+  $('#star_rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>
