@@ -9,19 +9,7 @@ Gems used in this app:
 
 * bootstrap-sass for styling
 
-* Configuration
+* searchkick for smart searching functionality
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+* jQuery Raty for a star rating
  

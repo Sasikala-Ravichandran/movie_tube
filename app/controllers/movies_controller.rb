@@ -1,6 +1,15 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
+  def search
+    if(params[:search])
+      @movies = Movie.search(params[:search])
+    else
+      @movies = Movie.all
+    end
+
+  end
   def index
     @movies = Movie.all
   end
@@ -31,9 +40,7 @@ class MoviesController < ApplicationController
       end
     end
   end
-
-  # PATCH/PUT /movies/1
-  # PATCH/PUT /movies/1.json
+ 
   def update
     respond_to do |format|
       if @movie.update(movie_params)

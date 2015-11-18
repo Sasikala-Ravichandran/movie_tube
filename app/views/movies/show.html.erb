@@ -9,11 +9,7 @@
                <td><strong>Title:</strong> </td>
                <td><%= @movie.title %></td>
              </tr>
-             <tr>
-               <td><strong>Desc:</strong> </td>
-               <td><%= @movie.desc %></td>
-             </tr>
-
+            
               <tr>
                 <td><strong>Desc:</strong></td>
                 <td><%= @movie.desc %></td>
@@ -35,11 +31,30 @@
               </tr>
  
            </table>
+           <%= link_to "Write a Review", new_movie_review_path(@movie) %>
          </div>        
      </div>
+ 
+    <div class="col-md-6 col-md-offset-2">
+      <h1 class="review_title"><%= @movie.title %></h1>
+      <p> <%= @movie.desc %></p>
+
+      <% if @movie.reviews.blank? %>
+         <h3>No reviews yet. Please review the movie</h3>
+          <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+      <% else %> 
+         <% for review in @movie.reviews %>
+            <div class="reviews">
+               <p><%= review.rating %></p>
+               <p><%= review.comment %></p>
+            </div>
+         <% end %>
+      <% end %>
+    </div>
    </div>
   </div>
 </div>
+
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
