@@ -7,7 +7,7 @@ Gems used in this app:
 
 * carrierwave for image uploading
 
-* System dependencies
+* bootstrap-sass for styling
 
 * Configuration
 
