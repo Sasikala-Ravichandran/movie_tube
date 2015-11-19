@@ -16,14 +16,12 @@ class MoviesController < ApplicationController
 
  
   def show
-
     @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
     if @reviews.blank?
       @avg_review = 0
     else
       @avg_review = @reviews.average(:rating).round(2)
     end
-
   end
 
   
@@ -37,7 +35,6 @@ class MoviesController < ApplicationController
  
   def create
     @movie = current_user.movies.build(movie_params)
-
     respond_to do |format|
       if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }

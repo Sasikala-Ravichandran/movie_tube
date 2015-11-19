@@ -7,25 +7,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Movie Tube", root_path, class: "navbar-brand" %>
+      <strong><%= link_to "MOVIE TUBE", root_path, class: "navbar-brand" %></strong>
     </div>
      
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
      
-      <%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
-         <%= text_field_tag :search, params[:search], class: "form_control" %>
-         <%= submit_tag "Search", name:nil, class: "btn btn-default" %>
+    <%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+        <div class="form-group">
+         <%= text_field_tag :search, params[:search], class: "form_control text_input", placeholder: "Search Movies" %>
+         <%= button_tag(type: 'submit', class: "btn btn-sm submit_button") do %>
+             <span class="glyphicon glyphicon-search"></span>
+         <% end %>
+         </div>
     <% end %>
        
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li> <%= link_to "New Movie", new_movie_path, class: "active" %></li>
-          <li> <%= link_to "Account", edit_user_registration_path %></li>
+          <li> <%= link_to "New Movie", new_movie_path, class: "active mar-rig" %></li>
+          <li> <%= link_to "Account", edit_user_registration_path, class: "mar-rig" %></li>
           <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Login",  new_user_session_path %></li>
-          <li> <%= link_to "Sign_up", new_user_registration_path %></li>
+          <li><%= link_to "LOGIN",  new_user_session_path, class: "mar-rig" %></li>
+          <li> <%= link_to "SIGNUP", new_user_registration_path%></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

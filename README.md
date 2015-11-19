@@ -1,9 +1,10 @@
 # movie_tube
-for rating and reviewing the movies 
- 
-An app allows signed_in user to rate and review the movies and also added searching feature
+  
+This app allows users to upload the movie details, to search for movies, to rate them and to read reviews about them. 
 
 Gems used in this app:
+
+* devise for user authentication
 
 * carrierwave for image uploading
 

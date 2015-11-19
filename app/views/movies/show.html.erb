@@ -5,6 +5,17 @@
          <%= image_tag @movie.mimage.url() %>
          <div class="star_rating" data-score=<%= @avg_review %>></div>
          <em><%= @reviews.length %> Reviews</em>
+         <div class="mar-bottom">
+           <% if user_signed_in? %>
+                <% if current_user == @movie.user %>
+                   <%= link_to 'Edit', edit_movie_path(@movie) %> 
+                   <%= link_to 'Back', movies_path %>
+                <% end %>
+           <% end %>
+         </div>
+         <div class="mar-bottom">
+           <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+         </div>          
          <div class="table-responsive">
            <table class="table">
              <tr>
@@ -33,7 +44,7 @@
               </tr>
  
            </table>
-           <%= link_to "Write a Review", new_movie_review_path(@movie) %>
+           
          </div>        
      </div>
  
@@ -56,17 +67,4 @@
    </div>
   </div>
 </div>
-
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> 
-<%= link_to 'Back', movies_path %>
-
-<script>
-   $(".star_rating").raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function(){
-        return $(this).attr('data-score');
-      }
-   });
-</script>
+ 

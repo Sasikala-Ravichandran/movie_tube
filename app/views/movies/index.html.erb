@@ -1,17 +1,19 @@
 <% unless user_signed_in? %>
-  <div class="jumbotron">
+  <div class="jumbotron center">
      <h1> Movie Tube</h1>
-     <p>place where you can rate and review movies which helps others to choose the best movies to spend their valuable time watching</p>
-     <p> <%= link_to "Sign_up", new_user_registration_path, class: "btn btn-primary btn-lg" %> </p>
+     <p><em>a place where you can rate and review movies which helps others to choose the best movies to spend their valuable time watching</em></p>
+     <p> <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-warning btn-lg" %> </p>
   </div>
 <% end %>
 
-<div class="row">
-  <% @movies.each do |movie| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag movie.mimage.url(), class: 'image'), movie %>
+<% @movies.each_slice(4) do |movies| %>
+  <div class="row">
+    <% movies.each do |movie| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag movie.mimage.url(), class: 'image'), movie %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
