@@ -16,12 +16,4 @@
 //= require bootstrap-sprockets
 //= require jquery.raty
 //= require_tree .
-$(function(){
-	$(".star_rating").raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function(){
-        return $(this).attr('data-score');
-      }
-   }); 
-});
+ 

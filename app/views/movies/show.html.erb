@@ -9,7 +9,6 @@
            <% if user_signed_in? %>
                 <% if current_user == @movie.user %>
                    <%= link_to 'Edit', edit_movie_path(@movie) %> 
-                   <%= link_to 'Back', movies_path %>
                 <% end %>
            <% end %>
          </div>
@@ -44,17 +43,16 @@
               </tr>
  
            </table>
-           
+         <%= link_to 'Back', movies_path %>  
          </div>        
      </div>
  
     <div class="col-md-6 col-md-offset-2">
       <h1 class="review_title"><%= @movie.title %></h1>
-      
+       <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
 
       <% if @movie.reviews.blank? %>
          <h3>No reviews yet. Please review the movie</h3>
-          <%= link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
       <% else %> 
          <% for review in @reviews %>
             <div class="reviews">
@@ -68,3 +66,12 @@
   </div>
 </div>
  
+<script>
+$(".star_rating").raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function(){
+        return $(this).attr('data-score');
+      }
+   }); 
+</script>
