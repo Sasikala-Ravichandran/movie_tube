@@ -1,13 +1,13 @@
 <%= form_for [ @movie, @review ] do |f| %>
-   
   <div class="form-group">
     <div id="input_rating"></div>
   </div>
+
   <div class="form-group">
     <%= f.label :comment %><br>
     <%= f.text_area :comment, class: "form-control"%>
   </div>
- 
+
   <div class="actions">
     <%= f.button :Create, class: "btn btn-info" %>
     <%= link_to 'Back', @movie, class: "btn btn-info pull-right" %>

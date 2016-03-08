@@ -1,12 +1,14 @@
 class ReviewsController < ApplicationController
+
   before_action :set_review, only: [ :edit, :update, :destroy]
   before_action :authenticate_user!
-   def new
+
+  def new
     @movie = Movie.find(params[:movie_id])
     @review = Review.new
-   end
- 
-   def create
+  end
+
+  def create
     @review = Review.new(review_params)
     @review.movie_id = params[:movie_id]
     @review.user_id = current_user.id
@@ -37,7 +39,6 @@ class ReviewsController < ApplicationController
     end
   end
 
- 
   def destroy
     @review.destroy
     respond_to do |format|
@@ -47,12 +48,11 @@ class ReviewsController < ApplicationController
   end
 
   private
-    
+
     def set_review
       @review = Review.find(params[:id])
     end
 
-     
     def review_params
       params.require(:review).permit(:rating, :comment)
     end

@@ -2,11 +2,10 @@
   <% if @movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
       <ul>
-      <% @movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,32 +14,35 @@
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control"%>
   </div>
+  
   <div class="form-group">
     <%= f.label :description %><br>
     <%= f.text_area :desc, class: "form-control" %>
   </div>
+  
   <div class="form-group">
     <%= f.label :movie_length %><br>
     <%= f.text_field :movie_length, class: "form-control" %>
   </div>
+  
   <div class="form-group">
     <%= f.label :director %><br>
     <%= f.text_field :director, class: "form-control" %>
   </div>
+  
   <div class="form-group">
     <%= f.label :rating %><br>
     <%= f.text_field :rating, class: "form-control" %>
   </div>
-
-   <div class="form-group">
+  
+  <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :mimage, class: "form-control" %>
   </div>
-
+  
   <div class="actions">
     <%= f.button :submit, class: "btn btn-info" %>
     <%= link_to 'Back', root_path, class: "btn btn-info pull-right" %>
   </div>
-
+  
 <% end %>
-

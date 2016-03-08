@@ -17,58 +17,60 @@
 @import "bootstrap";
 
 body{
-	background: #AA4847;
+  background: #AA4847;
 }
+
 .jumbotron, .navbar{
-	background: #FAEBD7;
+  background: #FAEBD7;
 }
  
 .mar-rig{
-
-	margin-right: 20px;
+  margin-right: 20px;
 }
+
 .mar-zero{
-	margin: 0 ;
+  margin: 0 ;
 }
  
 .mar-bottom{
-	margin-bottom: 10px;
-	a{
-	  
-	  text-decoration: underline;
-	}
+  margin-bottom: 10px;
+  a{
+    text-decoration: underline;
+  }
 }
+
 .center{
-	text-align:center;
+  text-align:center;
 }
+
 .review_title{
-	margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 .reviews{
-	padding: 15px 0;
-	border-bottom: 1px solid #EAEAEA;
-	.star-rating {
-		padding-bottom: 8px;
-	}
-}
-.text_input{
-    font-style: italic;
-	width: 330px;
-	height: 30px;
-	border:solid 1px gray;  
-	border-radius: 1px; 
-	padding-left: 5px; 
-    margin: 0 0 0 280px;
-   
-     
-}
- .submit_button {
-    display: inline;
-    width: 50px;
-    height: 28px;
-    margin-top: -2px;
-    margin-left: -54px;
-    border-radius: 1px; 
-    padding: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #EAEAEA;
+  .star-rating {
+    padding-bottom: 8px;
   }
+}
+
+.text_input{
+  font-style: italic;
+  width: 330px;
+  height: 30px;
+  border:solid 1px gray;
+  border-radius: 1px;
+  padding-left: 5px; 
+  margin: 0 0 0 280px;
+}
+ 
+.submit_button {
+  display: inline;
+  width: 50px;
+  height: 28px;
+  margin-top: -2px;
+  margin-left: -54px;
+  border-radius: 1px; 
+  padding: 0;
+}
